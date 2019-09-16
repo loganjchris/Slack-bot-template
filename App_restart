@@ -1,0 +1,12 @@
+#!/usr/bin/python
+from subprocess import Popen
+import sys
+
+#This App_restart file will automatically restart the
+#Python application when it stops for any reason
+#Usage: from terminal run ".\App_restart app.py"
+filename = sys.argv[1]
+while True:
+    print("\nStarting " + filename)
+    p = Popen("python " + filename, shell=True)
+    p.wait()
